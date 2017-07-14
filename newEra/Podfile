@@ -1,0 +1,8 @@
+platform :ios,  ‘8.0'
+target 'newEra' do
+
+pod 'MJExtension'
+pod 'SDWebImage',         '~>3.7'
+pod 'IQKeyboardManager'         # 智能键盘
+
+end

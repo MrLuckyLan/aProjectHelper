@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Environment</key>
+	<string>Develop</string>
+	<key>ServerVersion</key>
+	<string>V1.0.0</string>
+	<key>IP</key>
+	<dict>
+		<key>Develop</key>
+		<string>http://开发url/</string>
+		<key>Product</key>
+		<string>http://生产url/</string>
+	</dict>
+	<key>Port</key>
+	<dict>
+		<key>Develop</key>
+		<string>8080</string>
+		<key>Product</key>
+		<string>1000</string>
+	</dict>
+	<key>SDK</key>
+	<dict>
+		<key>Develop</key>
+		<dict>
+			<key>WeChatKey</key>
+			<string>&amp;response_type=code&amp;scope=snsapi_userinfo#wechat_redirect</string>
+		</dict>
+		<key>Product</key>
+		<dict>
+			<key>WeChatKey</key>
+			<string>&amp;response_type=code&amp;scope=snsapi_userinfo#wechat_redirect</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
