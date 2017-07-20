@@ -20,17 +20,17 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="843" height="1017"/>
+            <rect key="frame" x="0.0" y="0.0" width="397" height="760"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qyo-Dm-f9W">
-                    <rect key="frame" x="0.0" y="0.0" width="843" height="1017"/>
+                    <rect key="frame" x="0.0" y="0.0" width="397" height="760"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xnD-oA-ocR">
-                            <rect key="frame" x="0.0" y="0.0" width="843" height="1017"/>
+                            <rect key="frame" x="0.0" y="0.0" width="397" height="760"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRb-bn-dJL">
-                                    <rect key="frame" x="0.0" y="0.0" width="211" height="169.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="126.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     <state key="normal" title="serial_sync">
@@ -41,7 +41,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bb8-pa-fNf">
-                                    <rect key="frame" x="211" y="0.0" width="210.5" height="169.5"/>
+                                    <rect key="frame" x="100" y="0.0" width="99.5" height="126.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     <state key="normal" title="serial_asyn">
@@ -52,7 +52,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kp5-Jc-XNM">
-                                    <rect key="frame" x="421.5" y="0.0" width="211" height="169.5"/>
+                                    <rect key="frame" x="199.5" y="0.0" width="100" height="126.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     <state key="normal" title="concurrent_sync">
@@ -63,7 +63,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMR-6p-Gnx">
-                                    <rect key="frame" x="632.5" y="0.0" width="210.5" height="169.5"/>
+                                    <rect key="frame" x="299.5" y="0.0" width="97.5" height="126.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     <state key="normal" title="concurrent_asyn">
@@ -74,7 +74,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEe-xN-Add">
-                                    <rect key="frame" x="0.0" y="169.5" width="281" height="170"/>
+                                    <rect key="frame" x="0.0" y="126.5" width="132.5" height="126.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     <state key="normal" title="main_queue_asyn">
@@ -85,7 +85,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="riR-MQ-w3l">
-                                    <rect key="frame" x="281" y="169.5" width="281" height="170"/>
+                                    <rect key="frame" x="132.5" y="126.5" width="132" height="126.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     <state key="normal" title="main_queue_asyn">
@@ -96,7 +96,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDR-9q-Z8J">
-                                    <rect key="frame" x="562" y="169.5" width="281" height="170"/>
+                                    <rect key="frame" x="264.5" y="126.5" width="132.5" height="126.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     <state key="normal" title="阻塞">
@@ -107,14 +107,14 @@
                                     </connections>
                                 </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7L-ai-mBV">
-                                    <rect key="frame" x="0.0" y="339.5" width="843" height="0.0"/>
+                                    <rect key="frame" x="0.0" y="253" width="397" height="0.0"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" id="fJz-2O-tm8"/>
                                     </constraints>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcP-Lo-x2h">
-                                    <rect key="frame" x="0.0" y="339.5" width="281" height="169.5"/>
+                                    <rect key="frame" x="0.0" y="253" width="132.5" height="126.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     <state key="normal" title="barrier">
@@ -125,7 +125,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZiA-gc-UH2">
-                                    <rect key="frame" x="281" y="339.5" width="280.5" height="169.5"/>
+                                    <rect key="frame" x="132.5" y="253" width="132.5" height="126.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     <state key="normal" title="group">
@@ -136,7 +136,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8v-S7-XBt">
-                                    <rect key="frame" x="561.5" y="339.5" width="281" height="169.5"/>
+                                    <rect key="frame" x="265" y="253" width="132.5" height="126.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     <state key="normal" title="优先级,锁">
@@ -147,7 +147,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bA7-Ns-LGW">
-                                    <rect key="frame" x="0.0" y="509" width="211" height="169.5"/>
+                                    <rect key="frame" x="0.0" y="379.5" width="100" height="126.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                     <state key="normal" title="NSInvocationOperation">
@@ -158,7 +158,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m01-cz-hQb">
-                                    <rect key="frame" x="211" y="509" width="210.5" height="169.5"/>
+                                    <rect key="frame" x="100" y="379.5" width="99.5" height="126.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                     <state key="normal" title="NSBlockOperation">
@@ -169,7 +169,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlq-dS-a6X">
-                                    <rect key="frame" x="421.5" y="509" width="211" height="169.5"/>
+                                    <rect key="frame" x="199.5" y="379.5" width="100" height="126.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     <state key="normal" title="Queue_Invocation">
@@ -180,7 +180,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZU-e6-X5z">
-                                    <rect key="frame" x="632.5" y="509" width="210.5" height="169.5"/>
+                                    <rect key="frame" x="299.5" y="379.5" width="97.5" height="126.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     <state key="normal" title="Queue_Block">
@@ -191,10 +191,10 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6D-DF-P4K">
-                                    <rect key="frame" x="0.0" y="678.5" width="212" height="170"/>
+                                    <rect key="frame" x="0.0" y="506" width="80.5" height="126.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                    <state key="normal" title="OperationQueueEazyFunc">
+                                    <state key="normal" title="简单创建/线程通信">
                                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
@@ -202,7 +202,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZh-ev-E6t">
-                                    <rect key="frame" x="212" y="678.5" width="212" height="170"/>
+                                    <rect key="frame" x="80.5" y="506" width="80" height="126.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                     <state key="normal" title="依赖">
@@ -213,7 +213,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwV-Kf-QpL">
-                                    <rect key="frame" x="424" y="678.5" width="212" height="170"/>
+                                    <rect key="frame" x="160.5" y="506" width="80" height="126.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                     <state key="normal" title="最大并发数">
@@ -221,6 +221,28 @@
                                     </state>
                                     <connections>
                                         <action selector="setOperationCount:" destination="-1" eventType="touchUpInside" id="qYi-Tr-cna"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7b-pn-yrW">
+                                    <rect key="frame" x="240.5" y="506" width="79.5" height="126.5"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                    <state key="normal" title="挂起/取消">
+                                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="pauseAndCancel" destination="-1" eventType="touchUpInside" id="wBW-XF-zh0"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHf-i9-nPH">
+                                    <rect key="frame" x="320" y="506" width="77" height="126.5"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                    <state key="normal" title="监听">
+                                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="completeBlock:" destination="-1" eventType="touchUpInside" id="M2i-sU-xsz"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -264,20 +286,27 @@
                                 <constraint firstItem="ZiA-gc-UH2" firstAttribute="height" secondItem="jcP-Lo-x2h" secondAttribute="height" id="R0k-HZ-2U0"/>
                                 <constraint firstItem="Jlq-dS-a6X" firstAttribute="height" secondItem="bA7-Ns-LGW" secondAttribute="height" id="R8t-bB-tVb"/>
                                 <constraint firstItem="m01-cz-hQb" firstAttribute="top" secondItem="W8v-S7-XBt" secondAttribute="bottom" id="S17-mV-vy0"/>
-                                <constraint firstItem="r6D-DF-P4K" firstAttribute="width" secondItem="xnD-oA-ocR" secondAttribute="width" multiplier="1 / 4" constant="1" id="TWc-ac-o1O"/>
+                                <constraint firstItem="r6D-DF-P4K" firstAttribute="width" secondItem="xnD-oA-ocR" secondAttribute="width" multiplier="1 / 5" constant="1" id="TWc-ac-o1O"/>
+                                <constraint firstItem="oHf-i9-nPH" firstAttribute="height" secondItem="y7b-pn-yrW" secondAttribute="height" id="ViY-aR-ERW"/>
                                 <constraint firstItem="riR-MQ-w3l" firstAttribute="width" secondItem="QEe-xN-Add" secondAttribute="width" id="Voe-Um-kCl"/>
                                 <constraint firstItem="W8v-S7-XBt" firstAttribute="height" secondItem="jcP-Lo-x2h" secondAttribute="height" id="WTZ-Wh-43f"/>
+                                <constraint firstItem="y7b-pn-yrW" firstAttribute="height" secondItem="jwV-Kf-QpL" secondAttribute="height" id="Wbo-KW-uJz"/>
+                                <constraint firstItem="oHf-i9-nPH" firstAttribute="top" secondItem="pZU-e6-X5z" secondAttribute="bottom" id="X2J-gh-Grm"/>
                                 <constraint firstItem="hRb-bn-dJL" firstAttribute="top" secondItem="xnD-oA-ocR" secondAttribute="top" id="X8R-j5-UaH"/>
+                                <constraint firstAttribute="trailing" secondItem="oHf-i9-nPH" secondAttribute="trailing" id="XHz-dX-RtW"/>
                                 <constraint firstItem="bb8-pa-fNf" firstAttribute="top" secondItem="xnD-oA-ocR" secondAttribute="top" id="XfF-M1-Chj"/>
                                 <constraint firstItem="bA7-Ns-LGW" firstAttribute="width" secondItem="hRb-bn-dJL" secondAttribute="width" id="Y85-2c-VN4"/>
                                 <constraint firstItem="fDR-9q-Z8J" firstAttribute="top" secondItem="cMR-6p-Gnx" secondAttribute="bottom" id="aQK-ws-qng"/>
                                 <constraint firstItem="riR-MQ-w3l" firstAttribute="height" secondItem="QEe-xN-Add" secondAttribute="height" id="ad6-Ka-6DL"/>
+                                <constraint firstItem="y7b-pn-yrW" firstAttribute="leading" secondItem="jwV-Kf-QpL" secondAttribute="trailing" id="bjw-tg-xCu"/>
                                 <constraint firstItem="Kp5-Jc-XNM" firstAttribute="width" secondItem="hRb-bn-dJL" secondAttribute="width" id="cj8-dH-uxO"/>
                                 <constraint firstItem="hRb-bn-dJL" firstAttribute="height" secondItem="xnD-oA-ocR" secondAttribute="height" multiplier="1 / 6" id="cnv-6j-YrA"/>
                                 <constraint firstItem="Jlq-dS-a6X" firstAttribute="top" secondItem="W8v-S7-XBt" secondAttribute="bottom" id="dHK-fx-mM3"/>
                                 <constraint firstItem="aZh-ev-E6t" firstAttribute="height" secondItem="r6D-DF-P4K" secondAttribute="height" id="eAF-3m-gCc"/>
                                 <constraint firstItem="m01-cz-hQb" firstAttribute="leading" secondItem="bA7-Ns-LGW" secondAttribute="trailing" id="eTc-QV-GJY"/>
                                 <constraint firstItem="r6D-DF-P4K" firstAttribute="height" secondItem="bA7-Ns-LGW" secondAttribute="height" id="fsp-xm-1vi"/>
+                                <constraint firstItem="oHf-i9-nPH" firstAttribute="leading" secondItem="y7b-pn-yrW" secondAttribute="trailing" id="g3r-DR-bEg"/>
+                                <constraint firstItem="y7b-pn-yrW" firstAttribute="width" secondItem="jwV-Kf-QpL" secondAttribute="width" id="gKR-rM-MoG"/>
                                 <constraint firstItem="QEe-xN-Add" firstAttribute="width" secondItem="xnD-oA-ocR" secondAttribute="width" multiplier="1 / 3" id="hss-yh-DdV"/>
                                 <constraint firstItem="bA7-Ns-LGW" firstAttribute="leading" secondItem="xnD-oA-ocR" secondAttribute="leading" id="iLl-Cv-Iaj"/>
                                 <constraint firstItem="jcP-Lo-x2h" firstAttribute="height" secondItem="hRb-bn-dJL" secondAttribute="height" id="iN1-px-97j"/>
@@ -285,6 +314,7 @@
                                 <constraint firstItem="W8v-S7-XBt" firstAttribute="top" secondItem="G7L-ai-mBV" secondAttribute="bottom" id="kKL-Ui-U3L"/>
                                 <constraint firstItem="pZU-e6-X5z" firstAttribute="leading" secondItem="Jlq-dS-a6X" secondAttribute="trailing" id="kU9-JD-XlZ"/>
                                 <constraint firstAttribute="trailing" secondItem="G7L-ai-mBV" secondAttribute="trailing" id="lRr-FX-pjt"/>
+                                <constraint firstItem="y7b-pn-yrW" firstAttribute="top" secondItem="pZU-e6-X5z" secondAttribute="bottom" id="loK-Nl-kTr"/>
                                 <constraint firstItem="fDR-9q-Z8J" firstAttribute="height" secondItem="QEe-xN-Add" secondAttribute="height" id="mrE-x1-n4w"/>
                                 <constraint firstItem="pZU-e6-X5z" firstAttribute="top" secondItem="W8v-S7-XBt" secondAttribute="bottom" id="nkz-B8-s8X"/>
                                 <constraint firstItem="pZU-e6-X5z" firstAttribute="height" secondItem="bA7-Ns-LGW" secondAttribute="height" id="qAe-hU-o1b"/>
@@ -322,7 +352,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-1557.5" y="-743.5"/>
+            <point key="canvasLocation" x="-1859.5" y="-1047"/>
         </view>
     </objects>
 </document>

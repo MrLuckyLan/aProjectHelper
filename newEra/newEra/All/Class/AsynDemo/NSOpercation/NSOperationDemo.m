@@ -8,6 +8,13 @@
 
 #import "NSOperationDemo.h"
 
+@interface NSOperationDemo ()
+{
+    NSOperationQueue *opQueue;
+}
+
+@end
+
 @implementation NSOperationDemo
 
 
@@ -16,7 +23,7 @@
 + (void)generalNSInvocationOperation
 {
     /*
-     可以传递一个 NSObject 给operation的操作方法
+     可以传递一个 参数
      我们可以看到NSInvocationOperation其实是同步执行的，
      因此单独使用的话，这个东西也没有什么卵用，
      它需要配合我们后面介绍的NSOperationQueue去使用才能实现多线程调用，
@@ -112,16 +119,11 @@
 {
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     [queue addOperationWithBlock:^{
-        NSLog(@"1在第%@个线程",[NSThread currentThread]);
-        NSLog(@"1haha");
-    }];
-    [queue addOperationWithBlock:^{
-        NSLog(@"3在第%@个线程",[NSThread currentThread]);
-        NSLog(@"3haha");
-    }];
-    [queue addOperationWithBlock:^{
-        NSLog(@"3在第%@个线程",[NSThread currentThread]);
-        NSLog(@"3haha");
+        NSLog(@"在第%@个线程",[NSThread currentThread]);
+        // 回到主线程刷新UI
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            NSLog(@"更新UI......%@", [NSThread currentThread]);
+        }];
     }];
 }
 
@@ -187,11 +189,97 @@
     [queue addOperationWithBlock:^{
         NSLog(@"5在第%@个线程",[NSThread currentThread]);
     }];
+    
+    /*
+     NSOperation的对象 (NSBlockOperation *) (NSInvocationOperation* )都一个queuePriority属性，表示队列优先级
+     cpu会尽力将资源给高优先级的，尽量使高优先级的先执行，但优先级具有随机行，并不是高的就一定先执行
+     
+     它是一个枚举值，有这么几个等级可选
+     typedef NS_ENUM(NSInteger, NSOperationQueuePriority) {
+     NSOperationQueuePriorityVeryLow = -8L,
+     NSOperationQueuePriorityLow = -4L,
+     NSOperationQueuePriorityNormal = 0,
+     NSOperationQueuePriorityHigh = 4,
+     NSOperationQueuePriorityVeryHigh = 8
+     };
+     
+     */
+    
+}
+
++ (void)cancelAndPause
+{
+    /*
+    NSOperationQueue提供暂停和取消两种操作。
+    设置暂停只需要设置queue的suspended属性为YES或NO即可
+    取消你可以选择调用某个NSOperation的cancle方法，也可以调用Queue的cancelAllOperations方法来取消全部线程
+    
+    这里需要强调的是，所谓的暂停和取消并不会立即暂停或取消当前操作，而是不在调用新的NSOperation。
+    */
+    
+    [[NSOperationDemo new] pause];
+    [[NSOperationDemo new] cancel];
 }
 
 
+// 就是暂停和继续:  对队列的操作
+/**
+ 应用场景一：
+ 比如当我们在有WiFi的地发用手机下载电影，但是有事情走开了，断网了电影只下载了一半，这时就需要挂起
+ 等到了有网的地方又可以接着原来的进度下载
+ 切记：挂起的是队列，不会影响已经在执行的操作
+ 应用场景二：
+ 在tableview界面，开线程下载远程的网络界面，对UI会有影响，使用户体验变差
+ 那么这种情况，就可以设置在用户操作UI（如滚动屏幕）的时候，暂停队列（不是取消队列
+ 停止滚动的时候，恢复队列。
+ */
+- (void)pause
+{
+    
+    // 判断操作的数量，当前队列里面是否有操作
+    if(opQueue.operationCount == 0){
+        NSLog(@"没有操作");
+        return; // 没有操作的时候直接return，不会修改队列的状态
+    }
+    
+    // 暂停继续 :
+    opQueue.suspended = !opQueue.suspended;
+    if(opQueue.suspended){
+        NSLog(@"暂停");
+    }else
+    {
+        NSLog(@"继续");
+    }
+}
 
 
+- (void)cancel
+{
+    // 取消队列内的所有操作
+    // 只是取消队列里的任务，而正在执行的任务是无法取消的
+    // 另外取消了任务就是删除了队列内的所有操作
+    [opQueue cancelAllOperations];
+    NSLog(@"取消所有操作");
+    
+    // 取消队列的挂起状态(只要是取消了队列的操作，我们就把队列处于一个启动状态，以便于后续的开始)
+    opQueue.suspended = NO;
+}
+
+// 队列完成回调
++ (void)completeBlock
+{
+    NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
+        for (int i = 0; i < 10; i++) {
+            NSLog(@"-operation-下载图片-%@",[NSThread currentThread]);
+        }
+    }];
+    //监听操作的执行完毕
+    operation.completionBlock=^{
+        NSLog(@"--接着下载第二张图片--");
+    };
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    [queue addOperation:operation];
+}
 
 
 

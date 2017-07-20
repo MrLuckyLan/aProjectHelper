@@ -35,5 +35,10 @@
 // 设置最大并发数 maxConcurrentOperationCount
 + (void)setOperationCount;
 
+// 暂停和取消
++ (void)cancelAndPause;
+
+// 队列完成回调
++ (void)completeBlock;
 
 @end

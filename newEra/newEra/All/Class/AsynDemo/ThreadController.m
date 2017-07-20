@@ -22,6 +22,8 @@
 
 
 
+
+
 @end
 
 @implementation ThreadController
@@ -107,8 +109,17 @@
     [NSOperationDemo setOperationCount];
 }
 
+// 暂停继续取消:  对队列的操作
+- (IBAction)pauseAndCancel
+{
+    [NSOperationDemo cancelAndPause];
+}
 
 
+// 队列完成回调
+- (IBAction)completeBlock:(UIButton *)sender {
+    [NSOperationDemo completeBlock];
+}
 
 
 
@@ -122,14 +133,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
-
-
-
-
-
 
 
 
