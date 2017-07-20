@@ -58,6 +58,8 @@
 		6A82D7AD1F0F61DC004E7EA4 /* UIView+ZYDraggable.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A82D7AC1F0F61DC004E7EA4 /* UIView+ZYDraggable.m */; };
 		6A82D7B71F0F7534004E7EA4 /* FreeUIBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A82D7B61F0F7534004E7EA4 /* FreeUIBtn.m */; };
 		6A82D7BA1F0F7EF4004E7EA4 /* UINavigationBar+SetElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A82D7B91F0F7EF4004E7EA4 /* UINavigationBar+SetElement.m */; };
+		6A836B6B1F2055920012B85F /* GCDDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A836B6A1F2055920012B85F /* GCDDemo.m */; };
+		6A836B751F205A320012B85F /* NSOperationDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A836B741F205A320012B85F /* NSOperationDemo.m */; };
 		6AD738061F0CBE2400028954 /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD738051F0CBE2400028954 /* OneViewController.m */; };
 		6AD738121F0D064D00028954 /* UIButton+LTTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD738111F0D064D00028954 /* UIButton+LTTimer.m */; };
 		6AD738151F0D0D1500028954 /* NSDate+LTCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD738141F0D0D1500028954 /* NSDate+LTCategory.m */; };
@@ -172,6 +174,10 @@
 		6A82D7B61F0F7534004E7EA4 /* FreeUIBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeUIBtn.m; sourceTree = "<group>"; };
 		6A82D7B81F0F7EF4004E7EA4 /* UINavigationBar+SetElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+SetElement.h"; sourceTree = "<group>"; };
 		6A82D7B91F0F7EF4004E7EA4 /* UINavigationBar+SetElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+SetElement.m"; sourceTree = "<group>"; };
+		6A836B691F2055920012B85F /* GCDDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDDemo.h; sourceTree = "<group>"; };
+		6A836B6A1F2055920012B85F /* GCDDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDDemo.m; sourceTree = "<group>"; };
+		6A836B731F205A320012B85F /* NSOperationDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSOperationDemo.h; sourceTree = "<group>"; };
+		6A836B741F205A320012B85F /* NSOperationDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSOperationDemo.m; sourceTree = "<group>"; };
 		6AD738041F0CBE2400028954 /* OneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
 		6AD738051F0CBE2400028954 /* OneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
 		6AD738101F0D064D00028954 /* UIButton+LTTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+LTTimer.h"; sourceTree = "<group>"; };
@@ -314,6 +320,8 @@
 				6A2618311F18A17600D38FA7 /* ThreadController.h */,
 				6A2618321F18A17600D38FA7 /* ThreadController.m */,
 				6A2618331F18A17600D38FA7 /* ThreadController.xib */,
+				6A836B681F2055700012B85F /* GCD */,
+				6A836B6F1F2058820012B85F /* NSOpercation */,
 			);
 			path = AsynDemo;
 			sourceTree = "<group>";
@@ -634,6 +642,24 @@
 			path = componentUI;
 			sourceTree = "<group>";
 		};
+		6A836B681F2055700012B85F /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				6A836B691F2055920012B85F /* GCDDemo.h */,
+				6A836B6A1F2055920012B85F /* GCDDemo.m */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+		6A836B6F1F2058820012B85F /* NSOpercation */ = {
+			isa = PBXGroup;
+			children = (
+				6A836B731F205A320012B85F /* NSOperationDemo.h */,
+				6A836B741F205A320012B85F /* NSOperationDemo.m */,
+			);
+			path = NSOpercation;
+			sourceTree = "<group>";
+		};
 		6AD737F81F0CB9AA00028954 /* ThreeDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -936,6 +962,7 @@
 				6AD738061F0CBE2400028954 /* OneViewController.m in Sources */,
 				6A14F4301F0E258500D3033C /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				6A50EB551F07936C00B5BED8 /* NSString+LTCategory.m in Sources */,
+				6A836B751F205A320012B85F /* NSOperationDemo.m in Sources */,
 				6A82A95C1F00FCC10003B907 /* main.m in Sources */,
 				6A41E05B1F1718D000C00441 /* RunTimeTestTwo.m in Sources */,
 				6A26182A1F1871D200D38FA7 /* setValueForKeyModel.m in Sources */,
@@ -961,6 +988,7 @@
 				6A238F681F16217B00EE3386 /* RunLoopController.m in Sources */,
 				6A238F6E1F1621D100EE3386 /* ReactiveCocoaController.m in Sources */,
 				6A4D2ABA1F1499D6004D2D4A /* SDKConstant.m in Sources */,
+				6A836B6B1F2055920012B85F /* GCDDemo.m in Sources */,
 				6A41E07B1F1753C000C00441 /* UIImage+replaceSystem.m in Sources */,
 				6A2618341F18A17600D38FA7 /* ThreadController.m in Sources */,
 			);
