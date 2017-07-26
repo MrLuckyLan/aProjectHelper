@@ -8,7 +8,13 @@
 
 #import "RunLoopController.h"
 
-@interface RunLoopController ()
+@interface RunLoopController ()<UIWebViewDelegate>
+
+
+
+
+
+
 
 @end
 
@@ -16,8 +22,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    UIWebView *wb = [[UIWebView alloc] initWithFrame:self.view.frame];
+    [self.view addSubview:wb];
+    NSURLRequest *q = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://wap.aichensmart.com/Information/show/information_id/251/aMethod/H5/aType/none/aId/0.html"]];
+    [wb loadRequest:q];
+    wb.delegate = self;
+    
 }
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    
+    NSString *js = @"document.getElementsByName(\"description\")[0].content";
+    NSString *oko = [webView stringByEvaluatingJavaScriptFromString:js];
+    NSLog(@"==============%@", oko);
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

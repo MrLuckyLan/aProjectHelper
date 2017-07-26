@@ -158,17 +158,17 @@
     dispatch_group_t group = dispatch_group_create();
     
     dispatch_group_async(group, currentQueue, ^{
+        // 任务一
         sleep(3);
-        NSLog(@"0");
     });
     dispatch_group_async(group, currentQueue, ^{
+        // 任务二
         sleep(3);
-        NSLog(@"1");
     });
     dispatch_group_notify(group, currentQueue, ^{
-        NSLog(@"222");
+        // 任务一二完成后
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"==================");
+            // 回到主线程
         });
     });
 }
@@ -183,7 +183,7 @@
     
     //3.通过dispatch_apply函数对NSArray中的全部元素进行处理,并等待处理完成,
     dispatch_apply([array count], queue, ^(size_t index) {
-//        NSLog(@"%zu: %@", index, [array objectAtIndex:index]);
+        NSLog(@"%zu: %@", index, [array objectAtIndex:index]);
         NSLog(@"%@", [NSThread currentThread]);
     });
     NSLog(@"done");
