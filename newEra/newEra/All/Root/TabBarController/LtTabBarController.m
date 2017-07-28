@@ -75,7 +75,7 @@
     OneViewController *vc4 = [[OneViewController alloc] init];
     UINavigationController *nav4 = [[UINavigationController alloc] initWithRootViewController:vc4];
     
-    OneViewController *vc5 = [[OneViewController alloc] init];
+    ReactiveCocoaController *vc5 = [[ReactiveCocoaController alloc] init];
     UINavigationController *nav5 = [[UINavigationController alloc] initWithRootViewController:vc5];
     
     self.viewControllers = @[nav1,nav2,nav3,nav4,nav5];
