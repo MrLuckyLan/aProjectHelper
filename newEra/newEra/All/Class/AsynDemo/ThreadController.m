@@ -73,6 +73,15 @@
 - (IBAction)specail:(UIButton *)sender {
     [GCDDemo specail];
 }
+// 快速迭代
+- (IBAction)apply:(UIButton *)sender {
+    [GCDDemo apply];
+}
+
+// 信号量
+- (IBAction)semaphore:(UIButton *)sender {
+    [GCDDemo semaphore];
+}
 
 
 // NSInvocationOperation 简单用法
@@ -120,8 +129,6 @@
 - (IBAction)completeBlock:(UIButton *)sender {
     [NSOperationDemo completeBlock];
 }
-
-
 
 
 

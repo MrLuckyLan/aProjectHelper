@@ -8,7 +8,17 @@
 
 #import "ReactiveCocoaController.h"
 
+typedef void(^BLOCK)();
+
 @interface ReactiveCocoaController ()
+
+
+
+
+@property (nonatomic,copy) NSString *strCopy;
+@property (nonatomic,strong) NSString *strStrong;
+@property (nonatomic,copy) BLOCK block;
+
 
 @end
 
@@ -16,7 +26,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    NSMutableString *sourceStr = [NSMutableString stringWithString:@"hello"];
+    self.strCopy = sourceStr; /*深拷贝 新内存*/
+    self.strStrong = sourceStr; /*浅拷贝,使用sourceStr地址*/
+    [sourceStr appendString:@" world"];
+    NSLog(@"%@",  self.strCopy); //hello
+    NSLog(@"%@",  self.strStrong); //hello world
+}
+
+- (void)different
+{
+    __weak typeof(self) weakSelf = self;
+    self.block = ^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        NSLog(@"%@", strongSelf);
+    };
 }
 
 - (void)didReceiveMemoryWarning {

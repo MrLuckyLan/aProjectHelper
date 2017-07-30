@@ -52,7 +52,8 @@
      如果block数量大于了4，那么剩下的Block就会等待某个线程空闲下来之后被分配到该线程，且依然是优先分配到主线程。
      而如果我使用真机来跑的话，最大并发数始终为2。因此，具体的最大并发数和运行环境也是有关系的。
      */
-    NSBlockOperation * blockOperation = [NSBlockOperation blockOperationWithBlock:^{
+    NSBlockOperation * blockOperation =
+    [NSBlockOperation blockOperationWithBlock:^{
         NSLog(@"1在第%@个线程",[NSThread currentThread]);
         NSLog(@"1haha");
     }];
@@ -79,7 +80,10 @@
 + (void)operationQueueInvocation
 {
     NSDictionary *dict = [NSDictionary dictionaryWithObject:@"value1" forKey:@"key1"];
-    NSInvocationOperation *op = [[NSInvocationOperation alloc] initWithTarget:[self class] selector:@selector(operationSelector:) object:dict];
+    NSInvocationOperation *op = [[NSInvocationOperation alloc]
+                                 initWithTarget:[self class]
+                                 selector:@selector(operationSelector:)
+                                 object:dict];
     NSLog(@"start before");
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     [queue addOperation:op];

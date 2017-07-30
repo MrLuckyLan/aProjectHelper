@@ -5,19 +5,9 @@
 //  Created by lantian on 2017/7/20.
 //  Copyright © 2017年 LT. All rights reserved.
 //
-
 #import <Foundation/Foundation.h>
 
 @interface GCDDemo : NSObject
-
-
-
-
-
-
-
-
-
 
 // 主队列同步任务 阻塞
 + (void)main_queue_sync;
@@ -46,12 +36,14 @@
 // group
 + (void)group;
 
-
 // 线程锁等
 + (void)specail;
 
+// 快速迭代
++ (void)apply;
 
-
+// 信号量
++ (void)semaphore;
 
 
 

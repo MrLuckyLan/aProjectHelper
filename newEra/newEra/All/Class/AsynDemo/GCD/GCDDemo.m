@@ -14,11 +14,11 @@
 
 
 /*
- 同步执行	                            异步执行
- 
- 串行队列	 当前线程，一个一个执行	   会开启新的线程，但是任务是串行的，执行完一个任务，再执行下一个任务
- 并行队列	 当前线程，一个一个执行	   开很多线程，一起执行
- 主队列       阻塞                                   只在主线程
+ 同步执行	                                              |  异步执行
+                                                              |
+ 串行队列	 当前线程，一个一个执行	      |  会开启新的线程，但是任务是串行的，执行完一个任务，再执行下一个任务
+ 并行队列	 当前线程，一个一个执行	      |  开很多线程，一起执行
+ 主队列       阻塞                                     |  只在主线程
  
  线程阻塞 一: 主队列同步任务
  线程阻塞二: 串行队列同步或异步任务中 同步任务
@@ -29,6 +29,13 @@
  
  信号量
  dispatch_semaphore_creat
+ 
+ 
+ 我们使用GCD的时候如何让线程同步，目前我能想到的就三种
+ 
+ 1.dispatch_group
+ 2.dispatch_barrier
+ 3.dispatch_semaphore
  
  
  */
@@ -151,20 +158,92 @@
     dispatch_group_t group = dispatch_group_create();
     
     dispatch_group_async(group, currentQueue, ^{
+        // 任务一
         sleep(3);
-        NSLog(@"0");
     });
     dispatch_group_async(group, currentQueue, ^{
+        // 任务二
         sleep(3);
-        NSLog(@"1");
     });
     dispatch_group_notify(group, currentQueue, ^{
-        NSLog(@"222");
+        // 任务一二完成后
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"==================");
+            // 回到主线程
         });
     });
 }
+
+// 快速迭代
++ (void)apply {
+    //1.创建NSArray类对象
+    NSArray *array = @[@"a", @"b", @"c", @"d", @"e", @"f", @"g", @"h", @"i", @"j"];
+    
+    //2.创建一个全局队列
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    //3.通过dispatch_apply函数对NSArray中的全部元素进行处理,并等待处理完成,
+    dispatch_apply([array count], queue, ^(size_t index) {
+        NSLog(@"%zu: %@", index, [array objectAtIndex:index]);
+        NSLog(@"%@", [NSThread currentThread]);
+    });
+    NSLog(@"done");
+    /*!
+     *  @brief  输出结果
+     *
+     2016-02-25 19:37:17.308 dispatch_apply测试[3010:167871] 0: a
+     2016-02-25 19:37:17.308 dispatch_apply测试[3010:167956] 1: b
+     2016-02-25 19:37:17.308 dispatch_apply测试[3010:167957] 3: d
+     2016-02-25 19:37:17.308 dispatch_apply测试[3010:167871] 4: e
+     2016-02-25 19:37:17.309 dispatch_apply测试[3010:167957] 6: g
+     2016-02-25 19:37:17.309 dispatch_apply测试[3010:167871] 7: h
+     2016-02-25 19:37:17.309 dispatch_apply测试[3010:167957] 8: i
+     2016-02-25 19:37:17.309 dispatch_apply测试[3010:167871] 9: j
+     2016-02-25 19:37:17.308 dispatch_apply测试[3010:167956] 5: f
+     2016-02-25 19:37:17.308 dispatch_apply测试[3010:167955] 2: c
+     *  !!!因为在Global Dispatch Queue中执行,所以各个处理的执行时间不定
+     但done一定会输出在最后的位置,因为dispatch_apply函数会等待所以的处理结束
+     */
+}
+
+
+
+
+
+
+
+
+// 信号量
++ (void)semaphore
+{
+    /**
+     在GCD中有三个函数是semaphore的操作，
+     分别是：
+     dispatch_semaphore_create 创建一个semaphore
+     dispatch_semaphore_signal 发送一个信号
+     dispatch_semaphore_wait 等待信号
+     */
+    
+    dispatch_group_t group = dispatch_group_create();
+    // 创建信号量，并且设置值为10
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(10);
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    for (int i = 0; i < 100; i++)
+    {   // 由于是异步执行的，所以每次循环Block里面的dispatch_semaphore_signal根本还没有执行就会执行dispatch_semaphore_wait，从而semaphore-1.当循环10此后，semaphore等于0，则会阻塞线程，直到执行了Block的dispatch_semaphore_signal 才会继续执行
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        dispatch_group_async(group, queue, ^{
+            NSLog(@"%i===%@",i, [NSThread currentThread]);
+            sleep(2);
+            // 每次发送信号则semaphore会+1，
+            dispatch_semaphore_signal(semaphore);
+        });
+    }
+    
+}
+
+
+
+
+
 
 
 
