@@ -475,8 +475,6 @@
 			isa = PBXGroup;
 			children = (
 				6AD737F91F0CB9AA00028954 /* OneDemo */,
-				6AD737FA1F0CB9AA00028954 /* TwoDemo */,
-				6AD737F81F0CB9AA00028954 /* ThreeDemo */,
 				6A238F5F1F1620CD00EE3386 /* AsynDemo */,
 				6A238F5D1F1620CD00EE3386 /* Runtime */,
 				6A238F5C1F1620CD00EE3386 /* Runloop */,
@@ -666,16 +664,6 @@
 			path = NSOpercation;
 			sourceTree = "<group>";
 		};
-		6AD737F81F0CB9AA00028954 /* ThreeDemo */ = {
-			isa = PBXGroup;
-			children = (
-				6AD737FB1F0CB9CD00028954 /* Model */,
-				6AD737FC1F0CB9CD00028954 /* View */,
-				6AD737FD1F0CB9CD00028954 /* ViewController */,
-			);
-			path = ThreeDemo;
-			sourceTree = "<group>";
-		};
 		6AD737F91F0CB9AA00028954 /* OneDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -684,58 +672,6 @@
 				6AD738011F0CB9D800028954 /* Model */,
 			);
 			path = OneDemo;
-			sourceTree = "<group>";
-		};
-		6AD737FA1F0CB9AA00028954 /* TwoDemo */ = {
-			isa = PBXGroup;
-			children = (
-				6AD737FE1F0CB9D100028954 /* Model */,
-				6AD737FF1F0CB9D100028954 /* View */,
-				6AD738001F0CB9D100028954 /* ViewController */,
-			);
-			path = TwoDemo;
-			sourceTree = "<group>";
-		};
-		6AD737FB1F0CB9CD00028954 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		6AD737FC1F0CB9CD00028954 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		6AD737FD1F0CB9CD00028954 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		6AD737FE1F0CB9D100028954 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		6AD737FF1F0CB9D100028954 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		6AD738001F0CB9D100028954 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		6AD738011F0CB9D800028954 /* Model */ = {
