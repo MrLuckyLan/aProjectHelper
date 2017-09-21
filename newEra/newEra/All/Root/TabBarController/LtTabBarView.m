@@ -128,7 +128,7 @@
     dispatch_once(&onceToken, ^{
         
         NSInteger count = self.subviews.count;
-        NSArray *arr = @[@"首页",@"任务",@"消息",@"办公",@"通讯录"];
+        NSArray *arr = @[@"asyn",@"runtime",@"runloop",@"react",@"other"];
         for (int i = 0 ; i < count ; i++) {
             LtTabBarBtn *button = self.subviews[i];
             button.tag =TAG + i;
