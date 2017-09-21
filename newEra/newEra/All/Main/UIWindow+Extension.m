@@ -16,6 +16,12 @@
 
 
 
++ (void)ItemAtIndex:(int)index BadgeShow:(BOOL)show BadgeValue:(int)num
+{
+    UIWindow *window = [[UIApplication sharedApplication].delegate window];
+    LtTabBarController *tab = (LtTabBarController *)window.rootViewController;
+    [tab ItemAtIndex:index BadgeShow:show BadgeValue:num];
+}
 
 
 + (void)selectedItemIndex:(int)index
@@ -28,16 +34,16 @@
 
 - (void)startUpRootController
 {
-    AppRootWindow *window = (AppRootWindow *)[[UIApplication sharedApplication].delegate window];
-    [window setRootController];
+//    AppRootWindow *window = (AppRootWindow *)[[UIApplication sharedApplication].delegate window];
+//    [window setRootController];
 }
 
 
 
 - (void)defaultRootController
 {
-    AppRootWindow *window = (AppRootWindow *)[[UIApplication sharedApplication].delegate window];
-    [window setDefaultController];
+//    AppRootWindow *window = (AppRootWindow *)[[UIApplication sharedApplication].delegate window];
+//    [window setDefaultController];
 }
 
 

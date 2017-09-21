@@ -10,6 +10,7 @@
 #import "OneViewController.h"
 #import "TwoViewController.h"
 #import "ThreeViewController.h"
+#import "LtTabBarView.h"
 
 
 
@@ -26,7 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.dateDemoData = @[@"1",@"2",@"3"];
+    self.dateDemoData =
+  @[@"0",@"1",@"2",@"3",@"4",@"跳转Item", @"控制 badgeValue", @"动画隐藏tabbar", @"动画显示tabbar"];
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -62,6 +64,27 @@
         NSLog(@"\n%@\n%@\n%@", API_DNS,AliPayKey,WechatKey);
 //        NSLog(@"%@/%@", _Environment_Domain,_Login_URL);
         [self.navigationController pushViewController:[ThreeViewController new] animated:YES];
+    }else if (3 == indexPath.row){
+        NSLog(@"\n%@\n%@\n%@", API_DNS,AliPayKey,WechatKey);
+        //        NSLog(@"%@/%@", _Environment_Domain,_Login_URL);
+        [self.navigationController pushViewController:[ThreeViewController new] animated:YES];
+    }else if (4 == indexPath.row){
+        NSLog(@"\n%@\n%@\n%@", API_DNS,AliPayKey,WechatKey);
+        //        NSLog(@"%@/%@", _Environment_Domain,_Login_URL);
+        [self.navigationController pushViewController:[ThreeViewController new] animated:YES];
+    }else if (5 == indexPath.row){
+        
+        [UIWindow selectedItemIndex:1];
+        
+    }else if (6 == indexPath.row){
+        
+        [UIWindow ItemAtIndex:2 BadgeShow:YES BadgeValue:60];
+    }
+    else if (7 == indexPath.row){
+        [LtTabBarView TabBarHidden:YES animated:YES];
+    }
+    else if (8 == indexPath.row){
+        [LtTabBarView TabBarHidden:NO animated:YES];
     }
 }
 

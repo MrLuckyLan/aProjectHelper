@@ -20,12 +20,15 @@
 #import "RunLoopController.h"
 #import "CoreAnimaitionController.h"
 #import "ReactiveCocoaController.h"
+#import "RootNavgationViewController.h"
 
 #define TAG 600
 
 @interface LtTabBarController ()<LtTabBarViewDelegate>
 
 @property (nonatomic,strong) LtTabBarView *ltTabBar;
+
+
 
 
 
@@ -38,25 +41,43 @@
     [self setUp];
 }
 
+- (void)ItemAtIndex:(int)index BadgeShow:(BOOL)show BadgeValue:(int)num
+{
+    [self.ltTabBar ItemAtIndex:index BadgeShow:YES BadgeValue:10];
+}
+- (void)cleanAllBadge
+{
+    [self.ltTabBar ItemAtIndex:0 BadgeShow:NO BadgeValue:0];
+    [self.ltTabBar ItemAtIndex:1 BadgeShow:NO BadgeValue:0];
+    [self.ltTabBar ItemAtIndex:2 BadgeShow:NO BadgeValue:0];
+    [self.ltTabBar ItemAtIndex:3 BadgeShow:NO BadgeValue:0];
+    [self.ltTabBar ItemAtIndex:4 BadgeShow:NO BadgeValue:0];
+}
+
 // setter self.selectedIndex -> index
 - (void)setPrivateSelectedIndex:(int)privateSelectedIndex
 {
     _privateSelectedIndex = privateSelectedIndex;
-    privateSelectedIndex = privateSelectedIndex ? : 0;
-    LtTabBarBtn * temp = [self.ltTabBar viewWithTag:privateSelectedIndex + TAG];
+    privateSelectedIndex  = privateSelectedIndex ? : 0;
+    LtTabBarBtn * temp    = [self.ltTabBar viewWithTag:privateSelectedIndex + TAG];
     [self.ltTabBar buttonClick:temp];
 }
 // delegate
 - (void)tabBar:(LtTabBarView *)tabBar didSelectItemFrom:(NSInteger)from to:(NSInteger)to
 {
-    // 拦截中间按钮demo
-//    if (2 == to) {
-//        [UIWindow selectedItemIndex:1];
-//    }else{
-//        self.selectedIndex = to;
-//    }
+    /*
+     * 满足特殊变态需求,例如微博咸鱼等中间按钮模态事件 条件二
+     *
+     if (2 == to) {
+        [self presentViewController......]
+     }else{
+        self.selectedIndex = to;
+     }
+     */
     self.selectedIndex = to;
 }
+
+
 
 
 
@@ -73,14 +94,19 @@
     UINavigationController *nav3 = [[UINavigationController alloc] initWithRootViewController:vc3];
     
     OneViewController *vc4 = [[OneViewController alloc] init];
-    UINavigationController *nav4 = [[UINavigationController alloc] initWithRootViewController:vc4];
+    RootNavgationViewController *nav4 = [[RootNavgationViewController alloc] initWithRootViewController:vc4];
     
     ReactiveCocoaController *vc5 = [[ReactiveCocoaController alloc] init];
     UINavigationController *nav5 = [[UINavigationController alloc] initWithRootViewController:vc5];
     
+    /*
+     * 满足特殊变态需求,例如微博咸鱼等中间按钮模态事件 条件三
+     * 创建 self.viewControllers数组中 需要模态的地方旧要传入一个任意站位nav
+     */
+     
     self.viewControllers = @[nav1,nav2,nav3,nav4,nav5];
     
-    int type = 0; // 0 系统自带的TabBar 1 自定义
+    int type = 1; // 0 系统自带的TabBar 1 自定义
     if (0 == type) {
         nav1.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Thread" image:[UIImage imageNamed:@"tab1"] selectedImage:[UIImage imageNamed:@"tabsel1"]];
         nav2.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"runtime" image:[UIImage imageNamed:@"tab2"] selectedImage:[UIImage imageNamed:@"tabsel2"]];
@@ -90,7 +116,7 @@
         
     }else{
         //    [self.tabBar removeFromSuperview]; // 移除系统自带的tabBar
-        self.tabBar.backgroundColor = [UIColor clearColor];
+        self.tabBar.backgroundColor = [UIColor grayColor];
         self.tabBar.hidden = YES;
         [self.view addSubview:self.ltTabBar];
     }
@@ -103,15 +129,17 @@
     if (!_ltTabBar) {
         _ltTabBar = [LtTabBarView shareTabBar];
         [_ltTabBar.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-        // 添加对应个数按钮
         for (int i = 0; i < self.viewControllers.count; i++) {
             NSString *name = [NSString stringWithFormat:@"tab%d", i + 1];
             NSString *selName = [NSString stringWithFormat:@"tabsel%d", i + 1];
             [_ltTabBar addTabBarButtonWithName:name selName:selName];
         }
         _ltTabBar.delegate = self;
-        _ltTabBar.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 49, [UIScreen mainScreen].bounds.size.width, 49);
-        _ltTabBar.backgroundColor = [UIColor whiteColor];
+        _ltTabBar.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 44, [UIScreen mainScreen].bounds.size.width, 44);
+        _ltTabBar.backgroundColor = [UIColor grayColor];
+        [_ltTabBar ItemAtIndex:1 BadgeShow:YES BadgeValue:10];
+        [_ltTabBar ItemAtIndex:2 BadgeShow:YES BadgeValue:0];
+        [_ltTabBar ItemAtIndex:3 BadgeShow:YES BadgeValue:10];
     }
     return _ltTabBar;
 }

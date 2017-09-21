@@ -74,6 +74,7 @@
 		6AFF933C1EFD08220023EAEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF933B1EFD08220023EAEA /* Assets.xcassets */; };
 		6AFF933F1EFD08220023EAEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF933D1EFD08220023EAEA /* LaunchScreen.storyboard */; };
 		951E23C79AC2965C3DA3B5FF /* libPods-newEra.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEF65AD3FE24C1808D748C2 /* libPods-newEra.a */; };
+		DB34C8C81F735F9E00E7C1E9 /* RootNavgationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34C8C71F735F9E00E7C1E9 /* RootNavgationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -206,6 +207,8 @@
 		6AFF933E1EFD08220023EAEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6AFF93401EFD08220023EAEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCEF65AD3FE24C1808D748C2 /* libPods-newEra.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-newEra.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB34C8C61F735F9E00E7C1E9 /* RootNavgationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootNavgationViewController.h; sourceTree = "<group>"; };
+		DB34C8C71F735F9E00E7C1E9 /* RootNavgationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootNavgationViewController.m; sourceTree = "<group>"; };
 		EB0E20C6D9A7E9BF311AADC6 /* Pods-newEra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newEra.debug.xcconfig"; path = "Pods/Target Support Files/Pods-newEra/Pods-newEra.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -621,6 +624,8 @@
 			children = (
 				6A164B3C1F0A6E7E00D19B5E /* MyBadgeValue.h */,
 				6A164B3D1F0A6E7E00D19B5E /* MyBadgeValue.m */,
+				DB34C8C61F735F9E00E7C1E9 /* RootNavgationViewController.h */,
+				DB34C8C71F735F9E00E7C1E9 /* RootNavgationViewController.m */,
 			);
 			path = NavigationController;
 			sourceTree = "<group>";
@@ -791,7 +796,7 @@
 				TargetAttributes = {
 					6AFF932B1EFD08210023EAEA = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = G4S94H32N8;
+						DevelopmentTeam = WPH994PLBZ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -898,6 +903,7 @@
 				6A82D7BA1F0F7EF4004E7EA4 /* UINavigationBar+SetElement.m in Sources */,
 				6AEE01641F14B638007A9784 /* YDBaseSafeApi.m in Sources */,
 				6A82D79F1F0F43C5004E7EA4 /* NSArray+LTCategory.m in Sources */,
+				DB34C8C81F735F9E00E7C1E9 /* RootNavgationViewController.m in Sources */,
 				6AD738121F0D064D00028954 /* UIButton+LTTimer.m in Sources */,
 				6A41E0571F17003300C00441 /* RunTimeTestOne.m in Sources */,
 				6AD738151F0D0D1500028954 /* NSDate+LTCategory.m in Sources */,
@@ -1057,12 +1063,14 @@
 			baseConfigurationReference = EB0E20C6D9A7E9BF311AADC6 /* Pods-newEra.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = G4S94H32N8;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = WPH994PLBZ;
 				INFOPLIST_FILE = newEra/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yunda.newEra;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -1071,12 +1079,14 @@
 			baseConfigurationReference = 375AE6AD0C0A43D625E7CBF5 /* Pods-newEra.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = G4S94H32N8;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = WPH994PLBZ;
 				INFOPLIST_FILE = newEra/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yunda.newEra;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

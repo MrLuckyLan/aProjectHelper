@@ -7,6 +7,28 @@
 
 #import <UIKit/UIKit.h>
 
+
+
+
+typedef enum BadgeStyle
+{
+    /**自己的界面*/
+    Normal_BadgeStyle = 0,
+    /**别人的界面*/
+    Number_BadgeStyle,
+    
+}badgeStyle;
+
+
 @interface LtTabBarBtn : UIButton
+
+
+- (void)badgeStyle:(badgeStyle)style;
+
+- (void)badgeNormalShow:(BOOL)show;
+
+- (void)badgeNum:(int)num;
+
+
 
 @end

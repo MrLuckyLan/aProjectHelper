@@ -31,11 +31,13 @@
 + (void)show;
 /**TabBar隐藏*/
 + (void)hidden;
++ (void)TabBarHidden:(BOOL)hidden animated:(BOOL)animated;
 
 
 /**动画*/
 - (void)buttonClick:(UIButton *)button;
 
+- (void)ItemAtIndex:(int)index BadgeShow:(BOOL)show BadgeValue:(int)num;
 
 
 

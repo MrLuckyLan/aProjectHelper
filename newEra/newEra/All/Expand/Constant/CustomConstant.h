@@ -15,7 +15,7 @@
  *
  *  @return 适配屏幕的真实宽度
  */
-static inline CGFloat UIWidth(CGFloat designWidth)
+static inline CGFloat UIPlanWidth(CGFloat designWidth)
 {
     return  (designWidth / 750.0) * ([UIScreen mainScreen].bounds.size.width);
 }
@@ -27,7 +27,7 @@ static inline CGFloat UIWidth(CGFloat designWidth)
  *
  *  @return 适配屏幕的真实高度
  */
-static inline CGFloat UIHeight(CGFloat designHeight)
+static inline CGFloat UIPlanHeight(CGFloat designHeight)
 {
     return  (designHeight / 1334.0) * ([UIScreen mainScreen].bounds.size.height);
 }
